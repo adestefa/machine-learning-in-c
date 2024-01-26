@@ -43,7 +43,7 @@ float rand_float(void)
 // we can iterate over the training data and see if it fits our data
 // does it return the same or not.. we know nothing about the data or model
 // just see how well it performs 
-float cost(float w) 
+float cost(float w, float b) 
 {
     float result = 0.0f;
     for (size_t i = 0; i < train_count; ++i) {
@@ -52,7 +52,7 @@ float cost(float w)
         float x = train[i][0];
         
         // feed into the model
-        float y = x*w;
+        float y = x*w + b; // include bias
 
         // how bad is it? let's use the Average Square 
         // find the distance between actual and expected
@@ -83,8 +83,13 @@ int main()
 {
     // formula: y = x*w
     // srand(time(0));    
-    srand(69);    
+    srand(69);
+    
+    // weight
     float w = rand_float()*10.0f;
+
+    // bias
+    float b = rand_float()*5.0f;
 
     // our job is to drive the cost function to zero!
     // the closer to zero the better the model behaves on that training data
@@ -102,15 +107,20 @@ int main()
     // if you go in the opposite direction it grows, you will go to the minimum and get stuck there (drain)
     // approximate a derivertave
     for ( size_t i = 0; i<800; ++i) {
-        float dcost = (cost(w + eps) - cost(w))/eps;
+        float c = cost(w, b);
+
+        // model now takes two parameters
+        float dw = (cost(w + eps, b) - c)/eps;
+        float db = (cost(w, b + eps) - c)/eps;
         
         // single artifical neuron (perceptron)
-        w -= rate*dcost;
+        w -= rate*dw;
+        b -= rate*db;
 
-        printf("cost = %f, w = %f\n", cost(w), w); 
+        printf("cost = %f, w = %f, b = %f\n", cost(w, b), w, b); 
     }
     printf("-----------------------\n");
-    printf("%f\n", w);
+    printf("w = %f, b = %f\n", w, b);
 
 
     // sometimes where you start is important
