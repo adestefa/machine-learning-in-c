@@ -2,12 +2,35 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Model a single neuron with a single input signal
+ /*
+
+   Machine Learning in C with Tsoding! 1/24/2024 11:24PM
+   trying to predict some number based on input number
+   https://youtu.be/PGSba51aRYU?si=AoukTdQHbrXzhnFW&t=2458
+
+   >Model a single neuron with a two input signals
+  
+     Artifical Neuron
+   [x2] -w1- | LF | AF | 
+                        ---- y
+   [x2] -w2- | LF | AF | 
+  
+  inputs are connected to weights and neuron sums them up by multiplying by the weights
+  y = ((x1*w1) + (x2*w2) + (x3*w3) + b)... 
+  Then we add the bias after weights are calcualted
+  Our model is a single artificial neuron with a two input connections
+
+  1.  Inputs:              Several input x's            x1,x2,x3,x4
+  2.  Bias:                shifts the value L|R         b
+  3.  Weights:             how strong is this conn      w1,w2,w3,w4
+  3.  Linear Function:     
+  4.  Activation Function: 
+  5.  Output:              
+
+  */
 
 
-// Machine Learning in C with Tsoding! 1/24/2024 11:24PM
-// trying to predict some number based on input number
-// https://youtu.be/PGSba51aRYU?si=AoukTdQHbrXzhnFW&t=2458
+
 
 // training set (one number in, one number out)
 // array of pair of numbers
@@ -84,7 +107,7 @@ int main()
     // formula: y = x*w
     // srand(time(0));    
     srand(69);
-    
+
     // weight
     float w = rand_float()*10.0f;
 
@@ -127,25 +150,6 @@ int main()
     // this is why it is randomized so if it doesn't happen one time you can try again
     // re run from a different place.. stir the pile of linear algebra and try again
 
- /*
-        Artifical Neuron
-   [x0] -b1- | LF | AF | ---- y
-   [x1] -w1- | LF | AF | ---- y
-   [x2] -w2- | LF | AF | ---- y
-  
-  inputs are connected to weights and 
-  neuron sums them up by multiplying by the weights
-  y = ((x1*w1) + (x2*w2) + (x3*w3) + b)...
-  Our model is a single artificial neuron with a single connection
-
-  1.  Inputs:              Several input x's            x1,x2,x3,x4
-  2.  Bias:                shifts the value L|R         b
-  3.  Weights:             how strong is this conn      w1,w2,w3,w4
-  3.  Linear Function:     
-  4.  Activation Fucntion: 
-  5.  Output:              
-
-  */
 
     return 0;
 }
