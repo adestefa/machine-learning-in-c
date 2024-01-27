@@ -13,8 +13,7 @@
    >Use sigmoid as our action function to constrain unbound values
    >Model a simple OR Gate
 
-  
-     Artifical Neuron
+    Artifical Neuron
    [x2] -w1- | LF | AF | 
                         ---- y
    [x2] -w2- | LF | AF | 
@@ -30,6 +29,7 @@
   3.  Linear Function:     sum the inputs with weights  x1*w1 + x2*w2...
   4.  Activation Function: constrain unbound values     sigmoid function maps -infinity / +infinty to 0/1
   5.  Output:                                           y      
+
 
   */
 
@@ -67,8 +67,10 @@ float sigmoidf(float x)
  };
 
 // ZOR-gate
-// needs more power to run!
- float trainZOR[][3] = {
+// can not be modeled using single neuron
+// can use composition of non XOR-gates to create
+// (x|y) & -(x&y)
+ float trainXOR[][3] = {
     {0, 0, 0},
     {1, 0, 1},
     {0, 1, 1},
