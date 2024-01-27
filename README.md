@@ -13,12 +13,22 @@
 
 ![Image](imgs/artifical_neuron.png)
 
-Let's skip all the high level data science and see how we can use C to train a model using less complex maths. Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'.
+Let's skip all the high level data science terms and see how we can use C to train a model using less complex maths, and learn about how ML works by stripping it down to basic elements making everything as simple as possible. 
+
+Our first job in this effort is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'. 
+
+
 
 ![Image](imgs/single_input.png)
 
+If this seems too abstract, instead think of the circle as a car, and 'x' input is the driver, 'w' input is the backseat driver nudging the car to the destination 'y'.
 
-In order to 'learn' we must give the neuron input patterns in values we can iterate over until we 'train' the neuron to give us the expected 'y' output value that matches the desired outcome. In this first example we do this with simple training data that doubles the input. With enough training, the model weights should be able to predict the correct answer, which is the the double of any input value without knowing the math directly. 
+
+In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it an unique new input, and the trained weight values drive the path of  output to the correct answer. 
+
+What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with.
+
+ In this first example we do this with simple training data that doubles the input. With enough training, the model weights should be able to predict the correct answer, which is the the double of any input value without knowing the math directly. 
 
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
