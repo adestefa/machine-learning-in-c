@@ -51,7 +51,7 @@ float sigmoidf(float x)
  };
 
 // AND-gate
- float train[][3] = {
+ float trainAND[][3] = {
     {0, 0, 0},
     {1, 0, 0},
     {0, 1, 0},
@@ -66,7 +66,15 @@ float sigmoidf(float x)
     {1, 1, 0},
  };
 
-#define model_name "AND"
+// ZOR-gate
+ float train[][3] = {
+    {0, 0, 0},
+    {1, 0, 1},
+    {0, 1, 1},
+    {1, 1, 0},
+ }; 
+
+#define model_name "ZOR"
 #define train_count (sizeof(train)/sizeof(train[0]))
 
 
@@ -177,7 +185,7 @@ int main(void)
 
     
     printf("\n----------------------------------------------------------------\n");    
-    printf("Training Complete! Cycles:%u\n---[FINAL]---\n", cycles);
+    printf("%s Training Complete! Cycles:%u\n---[FINAL]---\n", model_name, cycles);
     for(size_t i = 0; i < 2; ++i) {
           
         for(size_t j = 0; j < 2; ++j) {
