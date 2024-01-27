@@ -136,11 +136,18 @@ int main(void)
     float b  = rand_float();
 
     // training cycles
-    size_t cycles = 1000*1000;
-
+    int cycles = 1000000;
+    
+    // thinking dots "..."
+    int thinking = 0;
+    int thinking_limit = 1000;
+    
+    
+    printf("\nBegin ML Training for '%s' model, each '.' = %u cycles.\n", model_name, thinking_limit);
+    printf("----------------------------------------------------------------\n"); 
     // Let's  Go!
-    for (size_t i = 0; i < cycles; ++i) {
-        // calculate the cost
+    for (int i = 0; i < cycles; ++i) {
+
         float c = cost(w1, w2, b);
         //printf("%f\n", c);
         
@@ -151,37 +158,44 @@ int main(void)
         w1 -= rate*dw1;
         w2 -= rate*dw2;
         b  -= rate*db;
-        printf(".");
+
+        // let's simulate training using dots
+        // limit the number we print to screen
+        ++thinking;
+        if (thinking == thinking_limit) {
+            printf(".");
+            thinking = 0;
+        }
 
         //printf("w1 = %f,  w2 = %f, b = %f, c = %f\n", w1, w2, b, cost(w1, w2, b));
         
     }
-        // Report   
-        //printf("--[ Cycles: %zu ]----------------\n", cycles);
-        //printf("> w1 = %f,  w2 = %f, b  = %f, c = %f\n", w1, w2, b, cost(w1, w2, b));
-        //printf("--[ Model Results:  ]----------------\n");
+    // Report   
+    //printf("--[ Cycles: %zu ]----------------\n", cycles);
+    //printf("> w1 = %f,  w2 = %f, b  = %f, c = %f\n", w1, w2, b, cost(w1, w2, b));
+    //printf("--[ Model Results:  ]----------------\n");
 
-        // final model results
-       
-        printf("\nModel:%s\nTraining Complete!\nCycles:%zu\n---[FINAL]---\n", model_name, cycles);
-        for(size_t i = 0; i < 2; ++i) {
+    
+    printf("\n----------------------------------------------------------------\n");    
+    printf("Training Complete! Cycles:%u\n---[FINAL]---\n", cycles);
+    for(size_t i = 0; i < 2; ++i) {
           
-            for(size_t j = 0; j < 2; ++j) {
+        for(size_t j = 0; j < 2; ++j) {
 
-                printf("%zu %zu %f\n", i, j, sigmoidf(i*w1 + j*w2 + b));
-            }
+            printf("%zu %zu %f\n", i, j, sigmoidf(i*w1 + j*w2 + b));
         }
-        printf("--[Expected]--\n");
+    }
+    printf("--[Expected]--\n");
        
-        // iterate over rows of training data
-        for (int i = 0; i < 4; i++) {
-            // Iterate over columns
-            for (int j = 0; j < 3; j++) {
-                printf("%d ", (int)train[i][j]);
-            }
-            // Move to the next line after printing each row
-            printf("\n");
+    // iterate over rows of training data
+    for (int i = 0; i < 4; i++) {
+        // Iterate over columns
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", (int)train[i][j]);
         }
+        // Move to the next line after printing each row
+        printf("\n");
+    }
 
     return 0;
 }
