@@ -5,9 +5,6 @@
 
 /*
 
-  
-/*
-
    Machine Learning in C with Tsoding! 1/24/2024 11:24PM
    trying to predict some number based on input number
    https://www.youtube.com/watch?v=PGSba51aRYU&t=4797s
@@ -54,7 +51,7 @@ float sigmoidf(float x)
  };
 
 // AND-gate
- float trainAND[][3] = {
+ float train[][3] = {
     {0, 0, 0},
     {1, 0, 0},
     {0, 1, 0},
