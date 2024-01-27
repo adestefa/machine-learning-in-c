@@ -11,15 +11,15 @@ We start by building a single artifical neuron with a single input and weight.
 
 Then we train this on some simple training data that doubles the input:
 
-<img src="imgs/double.png" alt="Image Description" style="width:200px;">
+<img src="imgs/double.png" alt="Image Description" style="width:300px;">
 
 A simple cost function that includes an average square and bias 
 
-<img src="imgs/cost_function.png" alt="Image Description" style="width:300px;">
+<img src="imgs/cost_function.png" alt="Image Description" style="width:500px;">
 
 Using this approch we can begin training the model:
 
-<img src="imgs/double_outcome.png" alt="Image Description" style="width:200px;">
+<img src="imgs/double_outcome.png" alt="Image Description" style="width:300px;">
 
 But a single input can only do so much work, let's add another input and increase our power
 
