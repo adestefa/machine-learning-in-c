@@ -11,11 +11,16 @@ We start by building a single artifical neuron with a single input and weight.
 
 Then we train this on some simple training data that doubles the input:
 
-<img src="imgs/double.png" alt="Image Description" style="width:300px;">
+<img src="imgs/double.png" alt="Image Description" style="width:200px;">
 
 A simple cost function that includes an average square and bias 
 
 <img src="imgs/cost_function.png" alt="Image Description" style="width:500px;">
+
+We then construct our training method that iterates over the cost and drives it down using epsilon and a set rate:
+
+<img src="imgs/training_cycles.png" alt="Image Description" style="width:500px;">
+
 
 Using this approch we can begin training the model:
 
@@ -37,9 +42,7 @@ This yeilds good results with one million training cycles:
 
 ![Image](imgs/img.png)
 
-One challenge is an XOR gate which can not be modeled with a single neuron. We must look to create copies of this neuron into a network to increase the processing power.
-
-Using these non-XOR gates, we can compose them into a small neural network to approximate an XOR gates function.
+One challenge is an XOR gate which can not be modeled with a single neuron. We must look to create copies of this neuron into a network to increase the processing power. Using these non-XOR gates, we can compose them into a small neural network to approximate an XOR gates function.
 
 
 ![Image](imgs/neural_net.png)

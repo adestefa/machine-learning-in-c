@@ -51,7 +51,7 @@ float sigmoidf(float x)
  };
 
 // AND-gate
- float train[][3] = {
+ float trainAND[][3] = {
     {0, 0, 0},
     {1, 0, 0},
     {0, 1, 0},
@@ -159,9 +159,9 @@ int main(void)
     // Let's  Go!
     for (int i = 0; i < cycles; ++i) {
 
+        // get the cost
         float c = cost(w1, w2, b);
-        //printf("%f\n", c);
-        
+       
         // can we drive the cost down using a brute force derivative?
         float dw1 = (cost(w1 + eps, w2, b) - c)/eps;
         float dw2 = (cost(w1, w2 + eps, b) - c)/eps;
@@ -171,7 +171,6 @@ int main(void)
         b  -= rate*db;
 
         // let's simulate training using dots
-        // limit the number we print to screen
         ++thinking;
         if (thinking == thinking_limit) {
             printf(".");
