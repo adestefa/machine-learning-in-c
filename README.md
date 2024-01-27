@@ -3,16 +3,17 @@
 
 
 
- <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, where he goes through each small step building on the last over a number of live streams I document here... His approach is to avoid the normal Data Science paths and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language. His keen approach and ways of learning by breaking complex things down to simple terms and ideas we can understand is very educational. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform no build C system "NOB", that only needs the compiler is worth checking out alone. (Chef's kiss)</i>
+ <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, where he goes through each small step building on the last over a number of live streams I document here... His approach is to avoid the normal Data Science paths and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform no build C system, that only needs the compiler is worth checking out alone. (<a href="https://github.com/tsoding/nobuild" title="Visit repo">repo</a>/<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a>)</i>
 
  <br />
  
 
-Let's skip all the high level data science and see how we can use C to train a model using less complex maths. 
+
+
 
 ![Image](imgs/artifical_neuron.png)
 
-Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'.
+Let's skip all the high level data science and see how we can use C to train a model using less complex maths. Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'.
 
 ![Image](imgs/single_input.png)
 
@@ -60,6 +61,8 @@ Now we have a single artificial neuron with two inputs, two weights, which uses 
 This yields good results with one million training cycles:
 
 ![Image](imgs/img.png)
+
+Although we are not exactly at 1, we are very close and can use above and below .5 to calculate the answer from the model output.
 
 
 One challenge is an XOR gate which can not be modeled with a single neuron alone. We need to design an architecture to reuse our neuron and build a small neural network to increase the processing power and compose our gates to do work together.
