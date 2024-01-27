@@ -1,7 +1,14 @@
 
 # Machine Learning in C
 
-Let's skip all the high level data science and see if we can use some basic C to train a model using some less complex maths.
+
+
+ <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, where he goes through each small step building on the last over a number of live streams I document here... His approach is to avoid the normal Data Science paths and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language. His keen approach and ways of learning by breaking complex things down to simple terms and ideas we can understand is very educational. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform no build C system "NOB", that only needs the compiler is worth checking out alone. (Chef's kiss)</i>
+
+ <br />
+ 
+
+Let's skip all the high level data science and see how we can use C to train a model using less complex maths. 
 
 ![Image](imgs/artifical_neuron.png)
 
