@@ -7,7 +7,7 @@
 
    Machine Learning in C with Tsoding! 1/24/2024 11:24PM
    trying to predict some number based on input number
-   https://youtu.be/PGSba51aRYU?si=AoukTdQHbrXzhnFW&t=2458
+   https://www.youtube.com/watch?v=PGSba51aRYU&t=4797s
 
    >Model a single neuron with a two input signals
   
@@ -39,7 +39,7 @@ float sigmoidf(float x)
     return 1.f / (1.f + expf(-x));
 }
 
-
+// OR-gate
  float train[][3] = {
     {0, 0, 0},
     {1, 0, 1},
@@ -58,7 +58,7 @@ float rand_float(void)
 }
 
 
-float cost(float w1, float w2) 
+float cost(float w1, float w2, float b) 
 {
     float result = 0.0f;
     for (size_t i = 0; i < train_count; ++i) {
@@ -69,7 +69,7 @@ float cost(float w1, float w2)
         
         // feed data into the model
         // sigmoid constrains unbounded values to 0 and 1
-        float y = sigmoidf(x1*w1 + x2*w2); 
+        float y = sigmoidf(x1*w1 + x2*w2 + b); 
 
         // how bad is it? let's use the Average Square 
         // find the distance between actual and expected
@@ -105,29 +105,48 @@ int main(void)
     //srand(69);    // fixed
     srand(time(0)); // randomly
 
-    // we can modify the one parameter we have 
+    // we can modify the parameters we have 
     float eps = 1e-1;
     float rate = 1e-1;
  
+    // generate our weights
     float w1 = rand_float();
     float w2 = rand_float();
+    float b  = rand_float();
 
+    // training cycles
     size_t cycles = 1000*1000;
 
+    // Let's  Go!
     for (size_t i = 0; i < cycles; ++i) {
         // calculate the cost
-        float c = cost(w1, w2);
-        // can we drive the cost down?
-        float dw1 = (cost(w1 + eps, w2) - c)/eps;
-        float dw2 = (cost(w1, w2 + eps) - c)/eps;
+        float c = cost(w1, w2, b);
+        // can we drive the cost down using a brute force derivative?
+        float dw1 = (cost(w1 + eps, w2, b) - c)/eps;
+        float dw2 = (cost(w1, w2 + eps, b) - c)/eps;
+        float db  = (cost(w1, w2, b + eps) - c)/eps;
         w1 -= rate*dw1;
         w2 -= rate*dw2;
-        printf("w1 = %f,  w2 = %f, c = %f\n", w1, w2, cost(w1, w2));
+        b  -= rate*db;
+
+        printf("w1 = %f,  w2 = %f, b = %f, c = %f\n", w1, w2, b, cost(w1, w2, b));
         
     }
-        printf("----------[ Training Cycles: %zu ]-----------\n", cycles);
-        printf("> w1 = %f,  w2 = %f, c = %f\n", w1, w2, cost(w1, w2));
-        printf("-------------------------------------------------\n");
+        // Report   
+        printf("--[ Cycles: %zu ]----------------\n", cycles);
+        //printf("> w1 = %f,  w2 = %f, b  = %f, c = %f\n", w1, w2, b, cost(w1, w2, b));
+        printf("--[ Model Results:  ]----------------\n");
+
+        // final model results
+       
+
+         for(size_t i = 0; i < 2; ++i) {
+          
+            for(size_t j = 0; j < 2; ++j) {
+
+                printf("[%zu|%zu] = %f\n", i, j, sigmoidf(i*w1 + j*w2 + b));
+            }
+        }
 
     return 0;
 }
