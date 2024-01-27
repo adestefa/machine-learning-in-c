@@ -51,7 +51,7 @@ float sigmoidf(float x)
  };
 
 // AND-gate
- float trainAND[][3] = {
+ float train[][3] = {
     {0, 0, 0},
     {1, 0, 0},
     {0, 1, 0},
@@ -67,14 +67,15 @@ float sigmoidf(float x)
  };
 
 // ZOR-gate
- float train[][3] = {
+// needs more power to run!
+ float trainZOR[][3] = {
     {0, 0, 0},
     {1, 0, 1},
     {0, 1, 1},
     {1, 1, 0},
  }; 
 
-#define model_name "ZOR"
+#define model_name "AND-Gate"
 #define train_count (sizeof(train)/sizeof(train[0]))
 
 
