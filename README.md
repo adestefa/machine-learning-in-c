@@ -34,6 +34,9 @@ First we update our training method to add the second weight and bind the output
 
 
 
+It is important to note how critical the added bias parameter is here for accuracy, as without it we can only drive the output based on the input parameters alone. But with a bias, the model can take the entire state of the output and shift it around left or right regardless of the inputs. 
+
+
 We then construct our training method that iterates over the cost and drives it down using epsilon and a set rate as dial knobs for finer control
 
 <img src="imgs/training_cycles.png" alt="Training cycles" style="width:500px;">
