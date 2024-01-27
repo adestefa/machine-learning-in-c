@@ -152,8 +152,8 @@ int main(void)
     int thinking_limit = 1000;
     
     
-    printf("\nBegin ML Training for '%s' model, each '.' = %u cycles.\n", model_name, thinking_limit);
-    printf("----------------------------------------------------------------\n"); 
+    printf("\nBegin training '%s' model with %d cycles. Each '.' = %d cycles.\n", model_name, cycles, thinking_limit);
+    printf("---------------------------------------------------------------------------------\n"); 
     // Let's  Go!
     for (int i = 0; i < cycles; ++i) {
 
@@ -185,8 +185,8 @@ int main(void)
     //printf("--[ Model Results:  ]----------------\n");
 
     
-    printf("\n----------------------------------------------------------------\n");    
-    printf("%s Training Complete! Cycles:%u\n---[FINAL]---\n", model_name, cycles);
+    printf("\n---------------------------------------------------------------------------------\n");    
+    printf("Training Complete!\n---[FINAL]---\n");
     for(size_t i = 0; i < 2; ++i) {
           
         for(size_t j = 0; j < 2; ++j) {
