@@ -15,7 +15,7 @@
 
 Let's skip all the high level data science terms and see how we can use C to train a model using less complex maths, and learn about how ML works by stripping it down to basic elements making everything as simple as possible. 
 
-Our first job in this effort is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'. 
+Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'. 
 
 
 
@@ -24,7 +24,7 @@ Our first job in this effort is to start by building a single artificial neuron 
 If this seems too abstract, instead think of the circle as a car, and 'x' input is the driver, 'w' input is the backseat driver nudging the car to the destination 'y'.
 
 
-In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it an unique new input, and the trained weight values drive the path of  output to the correct answer. 
+In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it a unique new input, and the trained weight values drive the path of output to the correct answer. 
 
 What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with.
 
@@ -55,7 +55,7 @@ First we update our cost function to add the second input and calculate the weig
 
 
 
-It is important to note how critical the added bias parameter is here for accuracy, as without it we can only drive the output based on the input parameters alone. But with a bias, the model can take the entire state of the output and shift it around left or right regardless of the inputs. 
+It is important to note how critical the added bias parameter is here for accuracy, as without it we can only drive the output based on the input parameters alone. But with a bias, the model can take the entire state of the output and shift it around left or right regardless of the inputs. In our car analogy, the bias would be a traffic cop, who is able to shift the whole car as needed.
 
 
 We then construct our training method that iterates over the cost and drives it down toward our target value using the help of epsilon and a set rate as dial knobs we can alter for better results.

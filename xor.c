@@ -70,7 +70,18 @@ typedef struct {
 } Xor;
 
 
+// compose neurons into layers
+float forward(Xor m, float x, float y)
+{
+   
+   // layer 1
+   float a =  m.or_w1*x + m.or_w2*y + m.or_b;
+   float b =  m.nand_w1*x + m.nand_y + m.nand_b;
 
+   // layer 2
+   return a*m.and_w1 + b*m.and_w2 + m.and_b;
+
+}
 
 
 int main(void) 
