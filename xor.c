@@ -13,14 +13,14 @@
    >Use sigmoid as our action function to constrain unbound values
    >Model a simple OR Gate
 
-    Artifical Neuron
+    Artificial Neuron
    [x2] -w1- | LF | AF | 
                         ---- y
    [x2] -w2- | LF | AF | 
   
   inputs are connected to weights and neuron sums them up by multiplying by the weights
   y = ((x1*w1) + (x2*w2) + (x3*w3) + b)... 
-  Then we add the bias after weights are calcualted
+  Then we add the bias after weights are calculated
   Our model is a single artificial neuron with a two input connections
 
   1.  Inputs:              Several input x's            x1,x2
@@ -32,7 +32,7 @@
 
 
     Now we have a functioning model of gates using a single artificial neuron
-    How can we use them to biuld an architecture for a small neural network?
+    How can we use them to build an architecture for a small neural network?
 
     Input    Layer1    Layer2    Result
     ------------------------------------

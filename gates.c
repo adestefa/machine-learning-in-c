@@ -5,6 +5,9 @@
 
 /*
 
+  
+/*
+
    Machine Learning in C with Tsoding! 1/24/2024 11:24PM
    trying to predict some number based on input number
    https://www.youtube.com/watch?v=PGSba51aRYU&t=4797s
@@ -13,14 +16,14 @@
    >Use sigmoid as our action function to constrain unbound values
    >Model a simple OR Gate
 
-    Artifical Neuron
+    Artificial Neuron
    [x2] -w1- | LF | AF | 
                         ---- y
    [x2] -w2- | LF | AF | 
   
   inputs are connected to weights and neuron sums them up by multiplying by the weights
   y = ((x1*w1) + (x2*w2) + (x3*w3) + b)... 
-  Then we add the bias after weights are calcualted
+  Then we add the bias after weights are calculated
   Our model is a single artificial neuron with a two input connections
 
   1.  Inputs:              Several input x's            x1,x2
@@ -110,7 +113,7 @@ float cost(float w1, float w2, float b)
         float d = y - train[i][2];
 
         // first any negatives by negative will be positive
-        // will amplfy small errors, something off will be
+        // will amplify small errors, something off will be
         // instantly visible 
         // note: a cube here will be non-zero, square is steeper curve
         result += d*d;

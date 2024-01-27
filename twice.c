@@ -10,14 +10,14 @@
 
    >Model a single neuron with a two input signals
   
-     Artifical Neuron
+     Artificial Neuron
    [x2] -w1- | LF | AF | 
                         ---- y
    [x2] -w2- | LF | AF | 
   
   inputs are connected to weights and neuron sums them up by multiplying by the weights
   y = ((x1*w1) + (x2*w2) + (x3*w3) + b)... 
-  Then we add the bias after weights are calcualted
+  Then we add the bias after weights are calculated
   Our model is a single artificial neuron with a two input connections
 
   1.  Inputs:              Several input x's            x1,x2,x3,x4
@@ -34,7 +34,7 @@
 
 // training set (one number in, one number out)
 // array of pair of numbers
-//  first: input number
+//  first: input 
 // second: what we expect
 float train[][2] = {
     {0, 0},
@@ -44,7 +44,7 @@ float train[][2] = {
     {4, 8},
 };
 
-// gives us the amount of elements dymically
+// gives us the amount of elements dynamically
 #define train_count (sizeof(train)/sizeof(train[0]))
 
 
@@ -84,8 +84,7 @@ float cost(float w, float b)
         float d = y - train[i][1];
 
         // first any negatives by negative will be positive
-        // will amplfy small errors, something off will be
-        // instantly visible 
+        // will amplify small errors, something off will be instantly visible 
         // note: a cube here will be non-zero, square is steeper curve
         result += d*d;
         
@@ -126,9 +125,9 @@ int main()
 
     // since this works, we can automate the process!
     // we are someplace on the slope of the cost function
-    // if we take the derivertive, it will tell us which direction the function grows
+    // if we take the derivative, it will tell us which direction the function grows
     // if you go in the opposite direction it grows, you will go to the minimum and get stuck there (drain)
-    // approximate a derivertave
+    // approximate a derivative
     for ( size_t i = 0; i<800; ++i) {
         float c = cost(w, b);
 
@@ -136,7 +135,7 @@ int main()
         float dw = (cost(w + eps, b) - c)/eps;
         float db = (cost(w, b + eps) - c)/eps;
         
-        // single artifical neuron (perceptron)
+        // single artificial neuron (perceptron)
         w -= rate*dw;
         b -= rate*db;
 

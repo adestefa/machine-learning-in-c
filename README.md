@@ -14,21 +14,20 @@ In order to 'learn' we must give the neuron input patterns in values we can iter
 
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
-Now we have the data, we build a a simple cost function to calculate how far the guess is from the target 'y'. The closer the cost gets to zero, the closer we are to the target outcome. We do the heavy lifting of finding the distance using an average square function, and include a bias to drive the model toward accuracy independent of input values.
+Now we have the data, we build a a simple cost function to calculate how far the guess is from the target 'y' value. The closer the cost gets to zero, the closer we are to the target outcome value. We do the heavy lifting of finding the distance using an average square function, and include a bias to drive the model toward accuracy independent of input values.
 
 <img src="imgs/cost_function.png" alt="Cost function" style="width:500px;">
 
 
-Using this approach, and random inputs values, we can begin iterating over the cost function for some basic training and use the training data as our target answers.
+Using this approach, and with random inputs values, we can begin iterating over the cost function and use the training data as our target answers. This works well enough, as the cost gets close to zero with little training.
 
 <img src="imgs/double_outcome.png" alt="training output" style="width:340px;">
 
-
-But a single input can only do so much work, let's add another input and increase our power
+But a single input can only do so much work, let's add another input and increase our power!
 
 <img src="imgs/two_inputs.png" alt="Nueron with two inputs" style="width:400px;">
 
-First we update our training method to add the second input and weight and bind the output range using the sigmoid function.
+First we update our cost function to add the second input and calculate the weights correctly, then bind the output range using the sigmoid function.
 
 <img src="imgs/two_input_logic.png" alt="two input logic" style="width:400px;">
 
@@ -38,7 +37,7 @@ First we update our training method to add the second input and weight and bind 
 It is important to note how critical the added bias parameter is here for accuracy, as without it we can only drive the output based on the input parameters alone. But with a bias, the model can take the entire state of the output and shift it around left or right regardless of the inputs. 
 
 
-We then construct our training method that iterates over the cost and drives it down toward our target value using the help of epsilon and a set rate as dial knobs we can alter for better results
+We then construct our training method that iterates over the cost and drives it down toward our target value using the help of epsilon and a set rate as dial knobs we can alter for better results.
 
 <img src="imgs/training_cycles.png" alt="Training cycles" style="width:500px;">
 
