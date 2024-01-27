@@ -27,7 +27,7 @@
   2.  Bias:                shifts the value L|R         b
   3.  Weights:             how strong is this conn      w1,w2
   3.  Linear Function:     sum the inputs with weights  x1*w1 + x2*w2...
-  4.  Activation Function: constrain unbound values     sigmoid function maps -infinity / +infinty to 0/1
+  4.  Activation Function: constrain unbound values     sigmoid function maps -infinity / +infinity to 0/1
   5.  Output:                                           y      
 
 
@@ -48,6 +48,26 @@
 
 
   */
+
+
+// we need 9 parameters
+
+typedef struct {
+    // Layer 1
+    float or_w1;
+    float or_w2;
+    float or_b;
+
+    float nand_w1;
+    float nand_w2;
+    float nand_b;
+    
+    // Layer 2s
+    float and_w1;
+    float and_w2;
+    float and_b;
+    
+} Xor;
 
 
 

@@ -32,7 +32,10 @@ What we are training is actually finding the right weights and bias that consist
 
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
-Now we have the data, we build a a simple cost function to calculate how far the guess is from the target 'y' value we want. In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
+Now we have the data, we build a a simple <i>cost function</i> to calculate how far the guess is from the target 'y' value we want. Cost function is a mathematical concept that measures the performance of a machine learning model for a data set. It quantifies the error between predicted and expected values and presents that error in the form of a single real number.
+
+
+ In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
 
 <img src="imgs/cost_function.png" alt="Cost function" style="width:500px;">
 
