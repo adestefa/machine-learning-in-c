@@ -58,8 +58,15 @@ float sigmoidf(float x)
     {1, 1, 1},
  };
 
+// NAND-gate
+ float trainNAND[][3] = {
+    {0, 0, 1},
+    {1, 0, 1},
+    {0, 1, 1},
+    {1, 1, 0},
+ };
 
-
+#define model_name "AND"
 #define train_count (sizeof(train)/sizeof(train[0]))
 
 
@@ -156,13 +163,24 @@ int main(void)
 
         // final model results
        
-        printf("\nTraining Complete!\nCycles:%zu\n---[FINAL]---\n", cycles);
-         for(size_t i = 0; i < 2; ++i) {
+        printf("\nModel:%s\nTraining Complete!\nCycles:%zu\n---[FINAL]---\n", model_name, cycles);
+        for(size_t i = 0; i < 2; ++i) {
           
             for(size_t j = 0; j < 2; ++j) {
 
-                printf("[%zu|%zu] = %f\n", i, j, sigmoidf(i*w1 + j*w2 + b));
+                printf("%zu %zu %f\n", i, j, sigmoidf(i*w1 + j*w2 + b));
             }
+        }
+        printf("--[Expected]--\n");
+       
+        // iterate over rows of training data
+        for (int i = 0; i < 4; i++) {
+            // Iterate over columns
+            for (int j = 0; j < 3; j++) {
+                printf("%d ", (int)train[i][j]);
+            }
+            // Move to the next line after printing each row
+            printf("\n");
         }
 
     return 0;
