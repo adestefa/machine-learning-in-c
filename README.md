@@ -1,7 +1,7 @@
 
 # Machine Learning in C
 
-Let's skip all the high data science, matrices and derivatives and see if we can use simple C to train a model using basic methods...
+Let's skip all the high data science and see if we can use simple C to train a model using basic methods...
 
 ![Image](imgs/artifical_neuron.png)
 
@@ -13,26 +13,27 @@ Then we train this on some simple training data that doubles the input:
 
 <img src="imgs/double.png" alt="Image Description" style="width:200px;">
 
-A simple cost function that includes an average square and bias 
+We use a simple cost function that includes an average square and bias to drive the model toward accuracy
 
 <img src="imgs/cost_function.png" alt="Image Description" style="width:500px;">
 
-We then construct our training method that iterates over the cost and drives it down using epsilon and a set rate:
+We then construct our training method that iterates over the cost and drives it down using epsilon and a set rate (shown here with two inputs)
 
 <img src="imgs/training_cycles.png" alt="Image Description" style="width:500px;">
+
 
 
 Using this approch we can begin training the model:
 
 <img src="imgs/double_outcome.png" alt="Image Description" style="width:340px;">
 
+
+
 But a single input can only do so much work, let's add another input and increase our power
 
 <img src="imgs/two_inputs.png" alt="Image Description" style="width:400px;">
 
-Now we have a single artificial neuron with  two inputs that uses signmoid as an activity function to limit unbound values, and uses a bias to shift the outcome. 
-
-We can then begin training on new data to model logic gates. This gives us AND, OR and NAND models that function well. 
+Now we have a single artificial neuron with two inputs which uses signmoid as an activity function to limit unbound values, and uses a bias to shift the outcome. We can now begin training on new data to model logic gates. This gives us AND, OR and NAND gate models that function well. 
 
 <img src="imgs/gate_training_data.png" alt="Image Description" style="width:300px;">
 
