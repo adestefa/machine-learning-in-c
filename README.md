@@ -19,17 +19,17 @@ A simple cost function that includes an average square and bias
 
 Using this approch we can begin training the model:
 
-<img src="imgs/double_outcome.png" alt="Image Description" style="width:300px;">
+<img src="imgs/double_outcome.png" alt="Image Description" style="width:340px;">
 
 But a single input can only do so much work, let's add another input and increase our power
 
-<img src="imgs/two_inputs.png" alt="Image Description" style="width:200px;">
+<img src="imgs/two_inputs.png" alt="Image Description" style="width:400px;">
 
-Now we have a single artificial neuron with  two inputs that uses signmoid an activity function to limit unbound values, and uses a bias to shift the outcome. 
+Now we have a single artificial neuron with  two inputs that uses signmoid as an activity function to limit unbound values, and uses a bias to shift the outcome. 
 
 We can then begin training on new data to model logic gates. This gives us AND, OR and NAND models that function well. 
 
-<img src="imgs/gate_training_data.png" alt="Image Description" style="width:200px;">
+<img src="imgs/gate_training_data.png" alt="Image Description" style="width:300px;">
 
 
 
