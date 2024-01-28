@@ -156,7 +156,7 @@ Now update main to add the wiggle
 <img src="imgs/xor_main.png" width="500px">
 
 
-Running we get the A set of original random values, then we run them through the finite difference function to wiggle the values giving us the B set of values.   
+Running we get a set of original random values (A), then we run them through the finite difference function to wiggle the values giving us a new set of values (B).   
 
 
 
