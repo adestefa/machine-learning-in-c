@@ -37,7 +37,7 @@ Now we have the data, we build a a simple <i>cost function</i> to calculate how 
 
  In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
 
-<img src="imgs/cost_function.png" alt="Cost function" style="width:500px;">
+<img src="imgs/cost_function.png" alt="Cost function" style="width:400px;">
 
 
 Using this approach, and with random inputs values, we can begin iterating over the cost function and use the training data as our target answers. This works well enough, as the cost gets close to zero with little training.
@@ -89,12 +89,12 @@ We are not sure at this point if this is the correct pattern yet, but we can all
 
 To deal with nine parameters we will create a new structure, which will account for AND, OR and NAND associated weights and bias for each.
 
-<img src="imgs/structxor.png" width="200">
+<img src="imgs/structxor.png" width="250px;">
 
 <br />
 Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. <br />
 
-<img src="imgs/forward.png" width="600">
+<img src="imgs/forward.png" width="600px;">
 
 
 Notice how each gate component is assigned a layer in the architecture. The data will flow first through the first layer comprised of both OR and NAND gates, then through the second layer AND gate respectively. All output values are bound to 0 and 1 with the sigmoid function.
@@ -103,38 +103,38 @@ Notice how each gate component is assigned a layer in the architecture. The data
 Next we define our XOR training data
 
 
-<img src="imgs/xor_data.png" width="200">
+<img src="imgs/xor_data.png" width="200px;">
 
 
 Now that we have the data, we need to update the cost function, this time we will pass in the whole model (Xor) and use the forward function.
 
 
-<img src="imgs/xor_cost_func.png" width="400">
+<img src="imgs/xor_cost_func.png" width="400px;">
 
 
 
 Before we had two inputs to randomize, with nine it is a bit more challenging so let's write a function to handle that too:
 
 
-<img src="imgs/xor_rand.png" width="200">
+<img src="imgs/xor_rand.png" width="200px;">
 
 
 
 
 and a simple way to report the values
 
-<img src="imgs/print_xor.png" width="300">
+<img src="imgs/print_xor.png" width="300px;">
 
 Running what we have so far gives us some values to start with
 
 <br />
 
-<img src="imgs/xor_values.png" width="300">
+<img src="imgs/xor_values.png" width="300px;">
 
 
 Now that we have all the key elements in place the moment of truth, we can now run our model and see the results...
 
-<img src="imgs/xor_run1.png" width="300">
+<img src="imgs/xor_run1.png" width="300px;">
 
 
 
