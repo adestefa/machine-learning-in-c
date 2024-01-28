@@ -9,7 +9,7 @@
  
 
 
-# Machine Learning
+# Where to Start?
 
 ![Image](imgs/artifical_neuron.png)
 
