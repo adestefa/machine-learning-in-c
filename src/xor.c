@@ -295,11 +295,12 @@ int main(void)
     // randomize an Xor data structure
     Xor m = rand_xor();
     
-    // drive down the cost
-    Xor g = finite_diff(m, eps);
-    printf("cost = %f\n", cost(m));
-    m = learn(m, g, rate);
-    printf("%f\n", cost(m));
+    for (size_t i=0; i<10; ++i) {
+        // drive down the cost
+        Xor g = finite_diff(m, eps);
+        m = learn(m, g, rate);
+        printf("%f\n", cost(m));
+    }
 
 
     return 0;
