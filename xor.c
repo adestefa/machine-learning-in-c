@@ -31,27 +31,16 @@
   5.  Output:                                           y      
 
 
-    Now we have a functioning model of gates using a single artificial neuron
-    How can we use them to build an architecture for a small neural network?
+  */
 
-    Input    Layer1    Layer2    Result
-    ------------------------------------
-    x -->  [OR]   -->  |
-        |              [AND] --> y
-    y -->  [NAND] -->  |
-    -----------------------------------
+
+/*
+ Define Xor as 9 parameters
     Weight parameters per gate:
       OR   : w1,w2,b
       NAND : w1,w2,b
       AND  : w1,w2,b
-
-
-
-  */
-
-
-// we need 9 parameters
-
+*/
 typedef struct {
     // Layer 1
     float or_w1;
@@ -70,16 +59,32 @@ typedef struct {
 } Xor;
 
 
-// compose neurons into layers
+/*
+
+    Now we have a functioning model of gates using a single artificial neuron
+    How can we use them to build an architecture for a small neural network?
+
+    Input    Layer1    Layer2    Output
+    ------------------------------------
+    x1 -->  [OR]   -->  |
+        |              [AND] --> y
+    x2 -->  [NAND] -->  |
+    -----------------------------------
+
+    compose neurons into a network of gate layers
+    without matrices, doing it as manually as possible
+    explicit mapping between the architecture
+    and actual code we have here
+*/
 float forward(Xor m, float x, float y)
 {
    
    // layer 1
-   float a =  m.or_w1*x + m.or_w2*y + m.or_b;
-   float b =  m.nand_w1*x + m.nand_y + m.nand_b;
-
+   float a =  sigmoidf(m.or_w1*x + m.or_w2*y + m.or_b);
+   float b =  sigmoidf(m.nand_w1*x + m.nand_y + m.nand_b);
+   
    // layer 2
-   return a*m.and_w1 + b*m.and_w2 + m.and_b;
+   return sigmoidf(a*m.and_w1 + b*m.and_w2 + m.and_b);
 
 }
 

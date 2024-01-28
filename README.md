@@ -3,7 +3,7 @@
 
 
 
- <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, where he goes through each small step building on the last over a number of live streams I document here... His approach is to avoid the normal Data Science paths and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform no build C system, that only needs the compiler is worth checking out alone. (<a href="https://github.com/tsoding/nobuild" title="Visit repo">repo</a>/<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a>)</i>
+ <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, where he goes through each small step building on the last over a number of live streams I document here... His approach is to avoid the normal Data Science paths and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform <a href="https://github.com/tsoding/nobuild" title="Visit repo">no build C system</a> (<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a></i>) that only needs the compiler, and <a href="https://www.youtube.com/watch?v=Y57ruDOwH1g">Hot C reloading</a> are both worth checking out alone. 
 
  <br />
  
@@ -32,7 +32,7 @@ What we are training is actually finding the right weights and bias that consist
 
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
-Now we have the data, we build a a simple <i>cost function</i> to calculate how far the guess is from the target 'y' value we want. Cost function is a mathematical concept that measures the performance of a machine learning model for a data set. It quantifies the error between predicted and expected values and presents that error in the form of a single real number.
+Now we have the data, we build a a simple <i>cost function</i> to calculate how far the guess is from the target 'y' value we want. A cost function is a mathematical concept that measures the performance of a machine learning model for a data set. It quantifies the error between predicted and expected values and presents that error in the form of a single real number.
 
 
  In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
@@ -69,7 +69,7 @@ Now we have a single artificial neuron with two inputs, two weights, which uses 
 
 <img src="imgs/gate_training_data.png" alt="Gate Training Data" style="width:200px;">
 
-
+<br />
 
 This yields good results with one million training cycles:
 
@@ -87,11 +87,17 @@ Using our trained non-XOR gate models, we can compose them into a small neural n
 
 We are not sure at this point if this is the correct pattern yet, but we can allocate enough neurons for a small network that can  begin to find the solution with.  Each gate will have two weights and a bias which increases the total number of our parameters from two to nine.
 
+To deal with nine parameters we will create a new structure, which will account for AND, OR and NAND associated weights and bias for each.
+
+<img src="imgs/structxor.png" width="200">
+
+<br />
+Next we create a forward function to arrange the nodes in the network and process the input data through the layers in the architecture. 
+
+<img src="imgs/forward.png" width="400">
 
 
-
-
-
+Notice how each gate component is assigned a layer in the architecture and marked as such. The data will flow first through the OR and NAND gates, then through the final AND gate respectively.
 
 
 

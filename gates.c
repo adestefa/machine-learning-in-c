@@ -14,9 +14,16 @@
    >Model a simple OR Gate
 
     Artificial Neuron
-   [x2] -w1- | LF | AF | 
+    [x1] -w1- | LF | AF | 
                         ---- y
-   [x2] -w2- | LF | AF | 
+    [x2] -w2- | LF | AF | 
+
+   Where:
+   x1 = input
+   w1 = weight
+   LF = linear function
+   AF = activity function
+    y = output 
   
   inputs are connected to weights and neuron sums them up by multiplying by the weights
   y = ((x1*w1) + (x2*w2) + (x3*w3) + b)... 
