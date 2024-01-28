@@ -185,7 +185,7 @@ Next we need to subtract B from A to move the model in the direction of the answ
 
 Running these changes with a before and after print of the values 
 
-<img src="imgs/learn_run.png" width="400px">
+<img src="imgs/learn_run.png" width="300px">
 
 
 
