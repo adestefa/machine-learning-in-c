@@ -143,7 +143,7 @@ Now that we have all the key elements in place the moment of truth, we can now r
 
 <br />
 
-<img src="imgs/xor_run1.png" width="300px;">
+<img src="imgs/xor_run1.png" width="400px;">
 
 
 Not great, but not bad. Let's see how we can improve and get closer to zero. Now that we have nine parameters, it is harder to wiggle them all like with did with the double and logic gates models. We have to do more work to get the job done in a new finite difference function.
