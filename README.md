@@ -75,7 +75,11 @@ Now we have a single artificial neuron with two inputs, two weights, which uses 
 
 This yields good results with one million training cycles:
 
-![Image](imgs/img.png)
+
+
+<img src="imgs/img.png" alt="Training Result" style="width:400px;">
+
+
 
 Although we are not exactly at 1, we are very close and can use above and below .5 to calculate the answer from the model output.
 
