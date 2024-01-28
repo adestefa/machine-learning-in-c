@@ -69,7 +69,7 @@ We then construct our training method that iterates over the cost and drives it 
 <img src="imgs/training_cycles.png" alt="Training cycles" style="width:500px;">
 
 
-# Logic Gates
+# New Training Data - Logic Gates
 
 Now we have a single artificial neuron with two inputs, two weights, which uses sigmoid as an activity function to limit unbound values, and a bias to shift the outcome as needed. We can now begin training on new data to do real work. Let's start with truth tables to model logic gates. This data allows us to train AND, OR and NAND gate models. 
 
@@ -89,7 +89,7 @@ Although we are not exactly at 1, we are very close and can use above and below 
 
 
 
-# Neural Network
+# A Neural Network
 
 
 One challenge is an XOR gate which can not be modeled with a single neuron alone. We need to design an architecture to reuse our neuron and build a small neural network to increase the processing power and compose our gates to do work together. Using our trained non-XOR gate models, we can compose them into a small neural network to approximate an XOR gate.
