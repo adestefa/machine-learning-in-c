@@ -16,7 +16,7 @@
 
 ![Image](imgs/artifical_neuron.png)
 
-We will work to skip over all the high level data science terms as much as possible and see how far we can get using C to train a model using less complex maths. Learn about how ML works by stripping it down to basic elements making everything as simple as possible and seeing it work together from the ground up.
+We will work to skip over all the high level data science terms as much as possible, and all the existing tools by using C alone. We are doing this to learn about how ML works by stripping it down to basic elements, down to simple as possible to see it work together from the ground up.
 
 Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed, will yield a desired outcome in 'y'. 
 
