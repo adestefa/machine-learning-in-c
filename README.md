@@ -119,3 +119,21 @@ Before we had two inputs to randomize, with nine it is a bit more challenging so
 <img src="imgs/xor_rand.png" width="300">
 
 
+
+
+and a simple way to report the values
+
+<img src="imgs/print_xor.png" width="300">
+
+Running what we have so far gives us some values to start with
+
+<br />
+
+<img src="imgs/xor_values.png" width="300">
+
+
+
+
+
+
+

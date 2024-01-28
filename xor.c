@@ -1,7 +1,7 @@
 #import <stdio.h>
 #import <stdlib.h>
 #import <time.h>
-
+#import <math.h>
 
 /*
 
@@ -59,6 +59,13 @@ typedef struct {
 } Xor;
 
 
+// returns 0 to RAND_MAX
+float rand_float(void)
+{
+   int r = rand();
+   //printf("\n--------------------\nR:%d \n", r);
+   return (float) r/ (float) RAND_MAX;
+}
 
 // constrain unbound values between 0 and 1
 float sigmoidf(float x)
@@ -88,7 +95,7 @@ float forward(Xor m, float x, float y)
    
    // layer 1
    float a =  sigmoidf(m.or_w1*x + m.or_w2*y + m.or_b);
-   float b =  sigmoidf(m.nand_w1*x + m.nand_y + m.nand_b);
+   float b =  sigmoidf(m.nand_w1*x + m.nand_w2*y + m.nand_b);
    
    // layer 2
    return sigmoidf(a*m.and_w1 + b*m.and_w2 + m.and_b);
@@ -96,13 +103,14 @@ float forward(Xor m, float x, float y)
 }
 
 // Define our training data
- float trainXOR[][3] = {
+ float train[][3] = {
     {0, 0, 0},
     {1, 0, 1},
     {0, 1, 1},
     {1, 1, 0},
  }; 
-
+#define model_name "AND-Gate"
+#define train_count (sizeof(train)/sizeof(train[0]))
 
 // cost function does not know about 
 // the neural node architecture, and 
@@ -118,7 +126,7 @@ float cost(Xor m, float x1, float x2)
         float x2 = train[i][1];
         
         // feed data into the model
-        float y = forward(m, x1, x2) 
+        float y = forward(m, x1, x2);
         
         // find the distance between input and outcome
         float d = y - train[i][2];
@@ -138,7 +146,7 @@ float cost(Xor m, float x1, float x2)
 }
 
 // Randomize Xor
-float rand_xor(void)
+Xor rand_xor(void)
 {
 
     Xor m;
@@ -157,12 +165,32 @@ float rand_xor(void)
     return m;
 }
 
+// report values
+void print_xor(Xor m)
+{
+    printf("XOR Random Values:\n");
+    printf("---------------------\n");
+    printf("or_w1 = %f\n", m.or_w1);
+    printf("or_w1 = %f\n", m.or_w2); 
+    printf("or_b = %f\n", m.or_b); 
+
+    printf("and_w1 = %f\n", m.and_w1);
+    printf("and_w1 = %f\n", m.and_w2);
+    printf("and_b = %f\n", m.and_b);
+
+    printf("nand_w1 = %f\n", m.nand_w1);
+    printf("nand_w1 = %f\n", m.nand_w2);
+    printf("nand_b = %f\n", m.nand_b);
+    printf("---------------------\n");
+ 
+}
+
 // Xor can be calculated with (x|y) & -(x&y)
 int main(void) 
 {
-    printf("XOR");
+  
     Xor m = rand_xor();
+    print_xor(m);
 
-    
     return 0;
 }
