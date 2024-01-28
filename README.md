@@ -39,12 +39,12 @@ Now we have the data, we build a a simple <i>cost function</i> to calculate how 
 
  In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
 
-<img src="imgs/cost_function.png" alt="Cost function" style="width:500px;">
+<img src="imgs/cost_function.png" alt="Cost function" style="width:600px;">
 
 
 Using this approach, and with random inputs values, we can begin iterating over the cost function and use the training data as our target answers. This works well enough, as the cost gets close to zero with little training.
 
-<img src="imgs/double_outcome.png" alt="training output" style="width:340px;">
+<img src="imgs/double_outcome.png" alt="training output" style="width:400px;">
 
 But a single input can only do so much work, let's add another input and increase our power!
 
