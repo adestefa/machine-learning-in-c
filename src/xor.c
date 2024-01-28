@@ -192,30 +192,37 @@ void print_xor(Xor m)
 */
 Xor finite_diff(Xor m)
 {
-
-    // store our calculation
+    // store our calculations
     Xor g; 
-    float saved; 
 
+    // running operations on floats incurs errors
+    // let's restore our bit values after our calculations
+    float saved; 
 
     // calculate original cost
     float c = cost(m);
-
-    // save the original
-    saved = m.or_w1;
+   
+    // OR weight 1
+    saved = m.or_w1;                // save the original
+    m.or_w1 += eps;                 // wiggle it by epsilon
+    g.or_w1 = (cost(m) - c) / eps;  // compute the new cost, find the diff
+    m_or_w1 = saved;                // restore original bits
     
-    // wiggle it by epsilon
-    m.or_w1 += eps;
-    
-    // compute the new cost
-    // subtract from original cost
-    // and divide by epsilon to find the difference
-    g.or_w1 = (cost(m) - c) / eps;
+    // OR weight 2
+    saved = m.or_w2;
+    m.or_w2 + eps;
+    g.or_w2 = (cost(m) -c) / eps;
+    m.or_w2 = saved;
 
-    // note we restore here because running operations on floats incurs errors
-    m_or_w1 = saved; // restore original bits
-    
+     // OR bias
+    saved = m.or_b;
+    m.or_b + eps;
+    g.or_b = (cost(m) -c) / eps;
+    m.or_b = saved;
 
+    // .. repeat for other six params...
+
+    
 }
 
 
