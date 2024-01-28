@@ -137,9 +137,32 @@ float cost(Xor m, float x1, float x2)
     return result;
 }
 
+// Randomize Xor
+float rand_xor(void)
+{
+
+    Xor m;
+    m.or_w1 = rand_float();
+    m.or_w2 = rand_float();
+    m.or_b = rand_float();
+
+    m.and_w1 = rand_float();
+    m.and_w2 = rand_float();
+    m.and_b = rand_float();
+
+    m.nand_w1 = rand_float();
+    m.nand_w2 = rand_float();
+    m.nand_b = rand_float();
+
+    return m;
+}
+
 // Xor can be calculated with (x|y) & -(x&y)
 int main(void) 
 {
     printf("XOR");
+    Xor m = rand_xor();
+
+    
     return 0;
 }

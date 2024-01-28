@@ -113,3 +113,9 @@ Now that we have the data, we need to update the cost function, this time we wil
 
 
 
+Before we had two inputs to randomize, with nine it is a bit more challenging so let's write a function to handle that too:
+
+
+<img src="imgs/xor_rand.png" width="300">
+
+
