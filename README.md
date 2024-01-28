@@ -178,7 +178,9 @@ Running we get a set of original random values (A), then we run them through the
 
 <img src="imgs/xor_wiggle.png" width="300px">
 
-Next we need to subtract B from the A to move the model in the direction of the answer.
+Next we need to subtract B from A to move the model in the direction of the answer. We create a new learn function for that.
+
+<img src="imgs/learning_rate.png" width="400px">
 
 
 

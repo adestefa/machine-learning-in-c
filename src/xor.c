@@ -266,23 +266,40 @@ Xor finite_diff(Xor m, float eps)
 
 }
 
-
-Xor train(Xor m, Xor g, float learning_rate)
+// Subtract G from M to give us the distance
+Xor learn(Xor m, Xor g, float learning_rate)
 {
+    m.or_w1 -= learning_rate*g.or_w1;
+    m.or_w2 -= learning_rate*g.or_w2;
+    m.or_b  -= learning_rate*g.or_b;
 
-}
+    m.and_w1 -= learning_rate*g.and_w1;
+    m.and_w2 -= learning_rate*g.and_w2;
+    m.and_b -= learning_rate*g.and_b;
+
+    m.nand_w1 -= learning_rate*g.and_w1;
+    m.nand_w2 -= learning_rate*g.and_w2;
+    m.nand_b -= learning_rate*g.and_b;
+
+    return m;
+} 
+
 
 
 
 int main(void) 
 {
     float eps = 1e-1;
-    
+    float rate = 1e-1;
+
     // randomize an Xor data structure
     Xor m = rand_xor();
     
     // drive down the cost
     Xor g = finite_diff(m, eps);
+    printf("cost = %f\n", cost(m));
+    m = learn(m, g, rate);
+    printf("%f\n", cost(m));
 
 
     return 0;
