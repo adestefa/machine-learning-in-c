@@ -30,7 +30,7 @@ In order to use this artificial neuron to 'learn' we must give it structured inp
 What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with. How do we do that exactly you may ask? We guess until we find the right weight value that works, and automate this by having the computer guess and then check it's own answer over and over again. This is called training.
 
  
-# Training Data
+# Training
 
 To begin we start with very simple training data that doubles the input. With enough guessing (training), we can find the right model weights that should be able to predict the double of any input value we give the neuron without knowing the math directly. 
 
