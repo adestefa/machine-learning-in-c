@@ -183,7 +183,7 @@ Next we need to subtract B from A to move the model in the direction of the answ
 <img src="imgs/learning_rate.png" width="400px">
 
 
-Running these changes with a before and after print of the values 
+Running these changes we can see the original output value decreases when we pass it through the learn function
 
 <img src="imgs/learn_run.png" width="200px">
 
