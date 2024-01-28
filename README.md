@@ -3,7 +3,9 @@
 
 
 
- <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, exploring ML concepts using C over a number of live streams. This effort is to document and share this wonderful work to help others learn and grow. This is not something you would use in production, it is a personal learning exercise to understand key concepts from a different perspective, building them from the ground up. We avoid the normal Data Science paths/terms as much as possible and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language and very generous with his time and wit. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform <a href="https://github.com/tsoding/nobuild" title="Visit repo">No Build C System</a> (<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a></i>) that only needs the compiler, and <a href="https://www.youtube.com/watch?v=Y57ruDOwH1g">Hot C Reloading</a> projects are impressive and worth checking out alone. 
+ <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, exploring ML concepts using C over a number of live streams. This effort is to document and share this wonderful work to help others learn and grow. This is not something you would use in production, it is a personal learning exercise to understand key concepts from a different perspective, building them from the ground up. We avoid the normal Data Science paths/terms as much as possible and keep things as simple as possible using C alone. I want to give a personal thanks to [Alexey Kutepov](https://github.com/rexim) (Tsoding) who is a demigod of the Lord's language, he is very generous with his time and wit, carefully explaining complex concepts so a caveman brain like me can understand. I highly recommend supporting him, subscribing to his content and visiting his github. His dependency-free, cross-platform <a href="https://github.com/tsoding/nobuild" title="Visit repo">No Build C System</a> (<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a></i>) that only needs the compiler, and <a href="https://www.youtube.com/watch?v=Y57ruDOwH1g">Hot C Reloading</a> projects are impressive and worth checking out alone. 
+ 
+ Oooga Booga!
 
  Let's go!
  <br />
@@ -144,9 +146,15 @@ Now that we have all the key elements in place the moment of truth, we can now r
 <img src="imgs/xor_run1.png" width="300px;">
 
 
+Now that we have nine parameters, it is harder to wiggle them all like with did with the double and non-xor gates models. 
+
+...
 
 
+<br />
 
+"Hey.. Where's the rest??!"<br />
 
+<img src="https://avatars.githubusercontent.com/u/18597647?v=4" width="80px">
 
-
+Stay tuned! More to come...

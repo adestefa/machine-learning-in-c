@@ -185,7 +185,40 @@ void print_xor(Xor m)
  
 }
 
-// Xor can be calculated with (x|y) & -(x&y)
+/*
+    we need to modify each with epsilon,
+    compute its original cost,
+
+*/
+Xor finite_diff(Xor m)
+{
+
+    // store our calculation
+    Xor g; 
+    float saved; 
+
+
+    // calculate original cost
+    float c = cost(m);
+
+    // save the original
+    saved = m.or_w1;
+    
+    // wiggle it by epsilon
+    m.or_w1 += eps;
+    
+    // compute the new cost
+    // subtract from original cost
+    // and divide by epsilon to find the difference
+    g.or_w1 = (cost(m) - c) / eps;
+
+    // note we restore here because running operations on floats incurs errors
+    m_or_w1 = saved; // restore original bits
+    
+
+}
+
+
 int main(void) 
 {
     Xor m = rand_xor();
