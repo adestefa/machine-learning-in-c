@@ -133,7 +133,7 @@ Running what we have so far gives us some values to start with
 
 <br />
 
-<img src="imgs/xor_values.png" width="400px;">
+<img src="imgs/xor_values.png" width="300px;">
 
 
 Put it all together..<br />
