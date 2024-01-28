@@ -150,6 +150,12 @@ Not great, but not bad. Let's see how we can improve and get closer to zero. Now
 
 <img src="imgs/xor_finite_diff2.png" width="600px">
 
+Running we get the A set of original random values, then we run them through the finite difference function to wiggle the values giving us the B set of values.   
+
+<img src="imgs/xor_wiggle.png" width="400px">
+
+The B set is what we need to subtract from the A set original values to move the model in the direction of the answer.
+
 ...
 
 

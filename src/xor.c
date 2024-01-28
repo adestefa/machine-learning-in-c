@@ -4,8 +4,8 @@
 #import <math.h>
 
 /*
-
-   Machine Learning in C with Tsoding! 1/24/2024 11:24PM
+   Inspired by:
+   Machine Learning in C with Tsoding!
    Trying to approximate an XOR gate using a small neural network.
    https://www.youtube.com/watch?v=PGSba51aRYU
 
@@ -30,8 +30,10 @@
   4.  Activation Function: constrain unbound values     sigmoid function maps -infinity / +infinity to 0/1
   5.  Output:                                           y      
 
+    Now let's design an architecture to combine neurons into a small neural network. 
 
   */
+
 
 
 /*
@@ -169,7 +171,7 @@ Xor rand_xor(void)
 void print_xor(Xor m)
 {
     printf("XOR Random Values:\n");
-    printf("---------------------\n");
+  
     printf("or_w1 = %f\n", m.or_w1);
     printf("or_w1 = %f\n", m.or_w2); 
     printf("or_b = %f\n", m.or_b); 
@@ -181,7 +183,7 @@ void print_xor(Xor m)
     printf("nand_w1 = %f\n", m.nand_w1);
     printf("nand_w1 = %f\n", m.nand_w2);
     printf("nand_b = %f\n", m.nand_b);
-    printf("---------------------\n");
+   
  
 }
 
@@ -190,7 +192,7 @@ void print_xor(Xor m)
     compute its original cost,
 
 */
-Xor finite_diff(Xor m)
+Xor finite_diff(Xor m, float eps)
 {
     // store our calculations
     Xor g; 
@@ -210,26 +212,80 @@ Xor finite_diff(Xor m)
     
     // OR weight 2
     saved = m.or_w2;
-    m.or_w2 + eps;
+    m.or_w2 += eps;
     g.or_w2 = (cost(m) -c) / eps;
     m.or_w2 = saved;
 
      // OR bias
     saved = m.or_b;
-    m.or_b + eps;
+    m.or_b += eps;
     g.or_b = (cost(m) -c) / eps;
     m.or_b = saved;
 
     // .. repeat for other six params...
+      
+    // NAND weight 1
+    saved = m.nand_w1;                // save the original
+    m.nand_w1 += eps;                 // wiggle it by epsilon
+    g.nand_w1 = (cost(m) - c) / eps;  // compute the new cost, find the diff
+    m.nand_w1 = saved;                // restore original bits
+    
+    // NAND weight 2
+    saved = m.nand_w2;
+    m.nand_w2 += eps;
+    g.nand_w2 = (cost(m) -c) / eps;
+    m.nand_w2 = saved;
 
+     // NAND bias
+    saved = m.nand_b;
+    m.nand_b += eps;
+    g.nand_b = (cost(m) -c) / eps;
+    m.nand_b = saved;
+
+
+     
+    // AND weight 1
+    saved = m.and_w1;                // save the original
+    m.and_w1 += eps;                 // wiggle it by epsilon
+    g.and_w1 = (cost(m) - c) / eps;  // compute the new cost, find the diff
+    m.and_w1 = saved;                // restore original bits
+    
+    // AND weight 2
+    saved = m.and_w2;
+    m.and_w2 += eps;
+    g.and_w2 = (cost(m) -c) / eps;
+    m.and_w2 = saved;
+
+     // AND bias
+    saved = m.and_b;
+    m.and_b += eps;
+    g.and_b = (cost(m) -c) / eps;
+    m.and_b = saved;
+
+    return g;
 
 }
 
 
 int main(void) 
 {
+    float eps = 1e-1;
+
+    
+    // randomize an Xor data structure
     Xor m = rand_xor();
+    
+    printf("\n\n-----[A - Original]-------------\n\n");
+    
+    // print the values
     print_xor(m);
-    printf("cost = %f\n", cost(m));
+
+    printf("\n-----[B - Wiggled]-------------\n");
+    
+    // now wiggle the values
+    print_xor(finite_diff(m, eps));
+
+
+
     return 0;
 }
