@@ -28,7 +28,7 @@ If this seems too abstract, instead think of the circle as a car, and 'x' input 
 
 In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it a unique new input, and the trained weight values drive the path of output to the correct answer. 
 
-What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with.
+What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with. How do we do that exactly you may ask? We guess until we find the right weight value that works.
 
  In the first attempt we do this with the most simple training data that doubles the input. With enough training, the model weights should be able to predict the double of any input value without knowing the math directly. 
 
