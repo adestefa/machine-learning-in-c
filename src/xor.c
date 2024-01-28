@@ -206,7 +206,7 @@ Xor finite_diff(Xor m)
     saved = m.or_w1;                // save the original
     m.or_w1 += eps;                 // wiggle it by epsilon
     g.or_w1 = (cost(m) - c) / eps;  // compute the new cost, find the diff
-    m_or_w1 = saved;                // restore original bits
+    m.or_w1 = saved;                // restore original bits
     
     // OR weight 2
     saved = m.or_w2;
@@ -222,7 +222,7 @@ Xor finite_diff(Xor m)
 
     // .. repeat for other six params...
 
-    
+
 }
 
 
