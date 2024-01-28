@@ -93,10 +93,10 @@ To deal with nine parameters we will create a new structure, which will account 
 
 <img src="imgs/structxor.png" width="250px;">
 
-<br />
+
 Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. 
 
-<br />
+
 
 <img src="imgs/forward.png" width="600px;">
 
