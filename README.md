@@ -143,19 +143,17 @@ and we need a simple way to report the values
 
 Running what we have so far gives us some values to start with
 
-<br />
-
 <img src="imgs/xor_values.png" width="3s00px;">
 
 
-Put it all together..<br />
+Put it all together
 
 <img src="imgs/runcode.png" width="300px;">
 
 Now that we have all the key elements in place the moment of truth, we can now run our model and see the results...
 
 
-<br />
+
 
 <img src="imgs/xor_run1.png" width="400px;">
 
