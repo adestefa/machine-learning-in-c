@@ -16,7 +16,7 @@
 
 ![Image](imgs/artifical_neuron.png)
 
-So here we will try to skip over all the high level data science terms as much as possible and see how far we can get using C to train a model using less complex maths, and learn about how ML works by stripping it down to basic elements making everything as simple as possible from the ground up.
+We will work to skip over all the high level data science terms as much as possible and see how far we can get using C to train a model using less complex maths. Learn about how ML works by stripping it down to basic elements making everything as simple as possible and seeing it work together from the ground up.
 
 Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed, will yield a desired outcome in 'y'. 
 
@@ -121,9 +121,7 @@ Before we had two inputs to randomize, with nine it is a bit more challenging so
 <img src="imgs/xor_rand.png" width="200px;">
 
 
-
-
-and a simple way to report the values
+and we need a simple way to report the values
 
 <img src="imgs/print_xor.png" width="300px;">
 
@@ -146,7 +144,7 @@ Now that we have all the key elements in place the moment of truth, we can now r
 <img src="imgs/xor_run1.png" width="300px;">
 
 
-Not great, but not bad. Let's see how we can improve and get closer to zero. Now that we have nine parameters, it is harder to wiggle them all like with did with the double and non-xor gates models. We have to do more work to get the job done in a new finite difference function.
+Not great, but not bad. Let's see how we can improve and get closer to zero. Now that we have nine parameters, it is harder to wiggle them all like with did with the double and logic gates models. We have to do more work to get the job done in a new finite difference function.
 
 <img src="imgs/xor_finite_diff2.png" width="500px">
 
