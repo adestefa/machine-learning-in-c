@@ -152,6 +152,7 @@ Not great, but not bad. Let's see how we can improve and get closer to zero. Now
 
 Now update main to add the wiggle
 
+
 <img src="mgs/xor_main.png" width="400px">
 
 
