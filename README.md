@@ -69,7 +69,7 @@ We then construct our training method that iterates over the cost and drives it 
 
 Now we have a single artificial neuron with two inputs, two weights, which uses sigmoid as an activity function to limit unbound values, and a bias to shift the outcome as needed. We can now begin training on new data to do real work. Let's start with truth tables to model logic gates. This data allows us to train AND, OR and NAND gate models. 
 
-<img src="imgs/gate_training_data.png" alt="Gate Training Data" style="width:230px;">
+<img src="imgs/gate_training_data.png" alt="Gate Training Data" style="width:200px;">
 
 <br />
 
@@ -133,7 +133,7 @@ Running what we have so far gives us some values to start with
 
 <br />
 
-<img src="imgs/xor_values.png" width="300px;">
+<img src="imgs/xor_values.png" width="3s00px;">
 
 
 Put it all together..<br />
