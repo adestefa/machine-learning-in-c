@@ -92,12 +92,14 @@ To deal with nine parameters we will create a new structure, which will account 
 <img src="imgs/structxor.png" width="200">
 
 <br />
-Next we create a forward function to arrange the nodes in the network and process the input data through the layers in the architecture. 
+Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. 
 
-<img src="imgs/forward.png" width="400">
+<img src="imgs/forward.png" width="600">
 
 
 Notice how each gate component is assigned a layer in the architecture and marked as such. The data will flow first through the OR and NAND gates, then through the final AND gate respectively.
+
+
 
 
 

@@ -59,6 +59,13 @@ typedef struct {
 } Xor;
 
 
+
+// constrain unbound values between 0 and 1
+float sigmoidf(float x)
+{
+    return 1.f / (1.f + expf(-x));
+}
+
 /*
 
     Now we have a functioning model of gates using a single artificial neuron
