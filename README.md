@@ -3,8 +3,9 @@
 
 
 
- <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, where he goes through each small step building on the last over a number of live streams I document here... His approach is to avoid the normal Data Science paths and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform <a href="https://github.com/tsoding/nobuild" title="Visit repo">no build C system</a> (<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a></i>) that only needs the compiler, and <a href="https://www.youtube.com/watch?v=Y57ruDOwH1g">Hot C reloading</a> are both worth checking out alone. 
+ <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, exploring ML concepts using C over a number of live streams. This effort is to document and share this wonderful work to help others learn and grow. This is not something you would use in production, it is a personal learning exercise to understand key concepts from a different perspective, building them from the ground up. We avoid the normal Data Science paths/terms as much as possible and keep things as simple as possible using C alone. I want to give a huge thanks to <a href="https://github.com/rexim">Alexey Kutepov</a> who is a demigod of the Lord's language and very generous with his time and wit. I highly recommend subscribing to his content and visiting his github. His dependency-free, cross-platform <a href="https://github.com/tsoding/nobuild" title="Visit repo">No Build C System</a> (<a href="https://www.youtube.com/watch?v=l9_TUMZSewo" title="Watch video">watch video</a></i>) that only needs the compiler, and <a href="https://www.youtube.com/watch?v=Y57ruDOwH1g">Hot C Reloading</a> projects are impressive and worth checking out alone. 
 
+ Let's go!
  <br />
  
 
@@ -13,10 +14,9 @@
 
 ![Image](imgs/artifical_neuron.png)
 
-Let's skip all the high level data science terms and see how we can use C to train a model using less complex maths, and learn about how ML works by stripping it down to basic elements making everything as simple as possible. 
+So here we will try to skip over all the high level data science terms as much as possible and see how far we can get using C to train a model using less complex maths, and learn about how ML works by stripping it down to basic elements making everything as simple as possible from the ground up.
 
-Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed will yield a desired outcome in 'y'. 
-
+Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed, will yield a desired outcome in 'y'. 
 
 
 ![Image](imgs/single_input.png)
