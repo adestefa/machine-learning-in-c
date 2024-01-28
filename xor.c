@@ -188,12 +188,8 @@ void print_xor(Xor m)
 // Xor can be calculated with (x|y) & -(x&y)
 int main(void) 
 {
-  
     Xor m = rand_xor();
-    
     print_xor(m);
-
     printf("cost = %f\n", cost(m));
-
     return 0;
 }
