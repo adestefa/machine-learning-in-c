@@ -183,7 +183,7 @@ Next we need to subtract B from A to move the model in the direction of the answ
 <img src="imgs/learning_rate.png" width="400px">
 
 
-Running these changes we can see every time we wiggle the values subtracting the finite difference from the original values drives the cost towards zero.
+Running these changes we can see every time we wiggle the values subtracting the finite difference from the original values drives the cost towards zero, increasing the model's accuracy.
 
 
 <img src="imgs/learn_output.png" width="400px">
