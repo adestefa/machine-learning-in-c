@@ -120,18 +120,18 @@ Now that we have the data, we need to update the cost function, this time we wil
 Before we had two inputs to randomize, with nine it is a bit more challenging so let's write a function to handle that too:
 
 
-<img src="imgs/xor_rand.png" width="300px;">
+<img src="imgs/xor_rand.png" width="400px;">
 
 
 and we need a simple way to report the values
 
-<img src="imgs/print_xor.png" width="300px;">
+<img src="imgs/print_xor.png" width="400px;">
 
 Running what we have so far gives us some values to start with
 
 <br />
 
-<img src="imgs/xor_values.png" width="300px;">
+<img src="imgs/xor_values.png" width="400px;">
 
 
 Put it all together..<br />
