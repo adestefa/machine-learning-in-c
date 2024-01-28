@@ -30,7 +30,7 @@ In order to use this artificial neuron to 'learn' we must give it structured inp
 
 What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with.
 
- In this first example we do this with simple training data that doubles the input. With enough training, the model weights should be able to predict the correct answer, which is the the double of any input value without knowing the math directly. 
+ In the first attempt we do this with the most simple training data that doubles the input. With enough training, the model weights should be able to predict the double of any input value without knowing the math directly. 
 
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
