@@ -31,6 +31,8 @@ What we are training is actually finding the right weights and bias that consist
 
  To begin we start with very simple training data that doubles the input. With enough guessing (training), we can find the right model weights that should be able to predict the double of any input value we give the neuron without knowing the math directly. 
 
+# Training Data
+
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
 Now we have the data, we build a a simple <i>cost function</i> to calculate how far the guess is from the target 'y' value we want. A cost function is a mathematical concept that measures the performance of a machine learning model for a data set. It quantifies the error between predicted and expected values and presents that error in the form of a single real number.
