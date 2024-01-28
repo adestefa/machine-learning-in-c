@@ -15,7 +15,7 @@
 
 We will work to skip over all the high level data science terms as much as possible, and all the existing tools by using C alone. We are doing this to learn about how ML works by stripping it down to basic elements, down to simple as possible to understand the concepts from the ground up.
 
-# Bouncing Baby Neuron
+# Ya Think?
 
 Our first job is to start by building a single artificial neuron with a single input 'x' and weight 'w', that when summed, will yield a desired outcome in 'y'. 
 
