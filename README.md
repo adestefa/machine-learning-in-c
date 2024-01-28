@@ -143,8 +143,7 @@ and we need a simple way to report the values
 
 Running what we have so far gives us some values to start with
 
-<img src="imgs/xor_values.png" width="3s00px;">
-
+<img src="imgs/xor_values.png" width="300px;">
 
 Put it all together
 
