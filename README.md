@@ -23,7 +23,7 @@ Our first job is to start by building a single artificial neuron with a single i
 
 ![Image](imgs/single_input.png)
 
-If this seems too abstract, instead think of the circle as a car, and 'x' input is the driver, 'w' input is the backseat driver nudging the car to the destination 'y'.
+If this seems too abstract, instead think of the circle as a car, and 'x' input is the driver, 'w' weight input that is the backseat driver nudging the car to the destination 'y'.
 
 
 In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it a unique new input, and the trained weight values drive the path of output to the correct answer. 
