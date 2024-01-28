@@ -87,7 +87,7 @@ Using our trained non-XOR gate models, we can compose them into a small neural n
 
 ![Image](imgs/neural_net.png)
 
-We are not sure at this point if this is the correct pattern yet, but we can allocate enough neurons for a small network that can  begin to find the solution with.  Each gate will have two weights and a bias which increases the total number of our parameters from two to nine.
+We are not sure at this point if this is the correct pattern yet, but we can allocate enough neurons for a small network that can  begin to find the solution with.  Each gate will have two weights and a bias which increases the total number of our parameters from two to nine. We are now well on our way to ChatGPT's 60 billion parameters!
 
 To deal with nine parameters we will create a new structure, which will account for AND, OR and NAND associated weights and bias for each.
 
