@@ -185,8 +185,8 @@ Next we need to subtract B from A to move the model in the direction of the answ
 
 Running these changes we can see the original output value decreases when we pass it through the learn function
 
-<img src="imgs/learn_run.png" width="200px">
 
+<img src="imgs/learn_output.png" width="200px">
 
 
 
