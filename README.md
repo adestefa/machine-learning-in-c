@@ -94,7 +94,9 @@ To deal with nine parameters we will create a new structure, which will account 
 <img src="imgs/structxor.png" width="250px;">
 
 <br />
-Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. <br />
+Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. 
+
+<br />
 
 <img src="imgs/forward.png" width="600px;">
 
@@ -105,7 +107,7 @@ Notice how each gate component is assigned a layer in the architecture. The data
 Next we define our XOR training data
 
 
-<img src="imgs/xor_data.png" width="200px;">
+<img src="imgs/xor_data.png" width="300px;">
 
 
 Now that we have the data, we need to update the cost function, this time we will pass in the whole model (Xor) and use the forward function.
