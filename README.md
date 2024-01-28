@@ -9,7 +9,7 @@
  
 
 
-
+# Machine Learning
 
 ![Image](imgs/artifical_neuron.png)
 
