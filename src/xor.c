@@ -6,8 +6,8 @@
 /*
 
    Machine Learning in C with Tsoding! 1/24/2024 11:24PM
-   trying to predict some number based on input number
-   https://www.youtube.com/watch?v=PGSba51aRYU&t=4797s
+   Trying to approximate an XOR gate using a small neural network.
+   https://www.youtube.com/watch?v=PGSba51aRYU
 
    >Create a single neuron with two input signals
    >Use sigmoid as our action function to constrain unbound values
