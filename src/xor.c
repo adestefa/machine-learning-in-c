@@ -7,7 +7,7 @@
    Inspired by:
    Machine Learning in C with Tsoding!
    Trying to approximate an XOR gate using a small neural network.
-   https://www.youtube.com/watch?v=PGSba51aRYU
+   https://www.youtube.com/watch?v=PGSba51aRYU&t=7989s
 
    >Create a single neuron with two input signals
    >Use sigmoid as our action function to constrain unbound values
@@ -105,7 +105,7 @@ float forward(Xor m, float x, float y)
 }
 
 // Define our training data
- float train[][3] = {
+ float train[][4] = {
     {0, 0, 0},
     {1, 0, 1},
     {0, 1, 1},
@@ -188,9 +188,8 @@ void print_xor(Xor m)
 }
 
 /*
-    we need to modify each with epsilon,
-    compute its original cost,
-
+    Compute original cost,
+    Then "wiggle" the values
 */
 Xor finite_diff(Xor m, float eps)
 {
@@ -277,9 +276,9 @@ Xor learn(Xor m, Xor g, float learning_rate)
     m.and_w2 -= learning_rate*g.and_w2;
     m.and_b -= learning_rate*g.and_b;
 
-    m.nand_w1 -= learning_rate*g.and_w1;
-    m.nand_w2 -= learning_rate*g.and_w2;
-    m.nand_b -= learning_rate*g.and_b;
+    m.nand_w1 -= learning_rate*g.nand_w1;
+    m.nand_w2 -= learning_rate*g.nand_w2;
+    m.nand_b -= learning_rate*g.nand_b;
 
     return m;
 } 
@@ -292,14 +291,27 @@ int main(void)
     float eps = 1e-1;
     float rate = 1e-1;
 
-    // randomize an Xor data structure
+    // Initialize and randomize an Xor data structure
     Xor m = rand_xor();
     
-    for (size_t i=0; i<10; ++i) {
-        // drive down the cost
+     // drive down the cost over cycles of learning
+    for (size_t i=0; i<100*1000; ++i) {
+        
+        // Calculate cost and wiggle weights/bias
         Xor g = finite_diff(m, eps);
+        
+        // subtract the diff from the original
         m = learn(m, g, rate);
+
+        // calculate new cost
         printf("%f\n", cost(m));
+    }
+
+    printf("--------------------------\n");
+    for (size_t i=0; i<2; ++i) {
+        for (size_t j=0; j<2; ++j) {
+            printf("%zu ^ %zu = %f\n", i, j, forward(m, i, j));  
+        }
     }
 
 
