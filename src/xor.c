@@ -267,6 +267,13 @@ Xor finite_diff(Xor m, float eps)
 }
 
 
+Xor train(Xor m, Xor g, float learning_rate)
+{
+
+}
+
+
+
 int main(void) 
 {
     float eps = 1e-1;
@@ -274,13 +281,8 @@ int main(void)
     // randomize an Xor data structure
     Xor m = rand_xor();
     
-    // print report
-    printf("\n\n-----[A - Original]-------------\n\n");
-    print_xor(m);
-
-    // now wiggle the values and print again
-    printf("\n-----[B - Wiggled]-------------\n");
-    print_xor(finite_diff(m, eps));
+    // drive down the cost
+    Xor g = finite_diff(m, eps);
 
 
     return 0;
