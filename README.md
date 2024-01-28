@@ -113,14 +113,14 @@ Next we define our XOR training data
 Now that we have the data, we need to update the cost function, this time we will pass in the whole model (Xor) and use the forward function.
 
 
-<img src="imgs/xor_cost_func.png" width="400px;">
+<img src="imgs/xor_cost_func.png" width="500px;">
 
 
 
 Before we had two inputs to randomize, with nine it is a bit more challenging so let's write a function to handle that too:
 
 
-<img src="imgs/xor_rand.png" width="200px;">
+<img src="imgs/xor_rand.png" width="300px;">
 
 
 and we need a simple way to report the values
