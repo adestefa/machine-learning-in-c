@@ -84,9 +84,7 @@ This yields good results with one million training cycles:
 Although we are not exactly at 1, we are very close and can use above and below .5 to calculate the answer from the model output.
 
 
-One challenge is an XOR gate which can not be modeled with a single neuron alone. We need to design an architecture to reuse our neuron and build a small neural network to increase the processing power and compose our gates to do work together.
-
-Using our trained non-XOR gate models, we can compose them into a small neural network to approximate an XOR gate.
+One challenge is an XOR gate which can not be modeled with a single neuron alone. We need to design an architecture to reuse our neuron and build a small neural network to increase the processing power and compose our gates to do work together. Using our trained non-XOR gate models, we can compose them into a small neural network to approximate an XOR gate.
 
 
 ![Image](imgs/neural_net.png)
