@@ -1,5 +1,5 @@
 
-# Machine Learning in C : building a small neural network by hand
+# Machine Learning in C : Building a Small Neural Network by Hand
 
 
 
