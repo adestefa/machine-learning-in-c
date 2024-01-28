@@ -65,7 +65,7 @@ First we update our cost function to add the second input and calculate the weig
 It is important to note how critical the added bias parameter is here for accuracy, as without it we can only drive the output based on the input parameters alone. But with a bias, the model can take the entire state of the output and shift it around left or right regardless of the inputs. In our car analogy, the bias would be a traffic cop, who is able to shift the whole car as needed.
 
 
-What we need now is a training function that can iterates over the cost and drives it down toward our target value. We do this with the help of two values, epsilon, and a learning rate as knobs we can use to slightly shift the output for better results.
+What we need now is a training function that can cycle over the cost and help drive it down toward zero. We do this with the help of two values, epsilon, and a learning rate as knobs we can use to slightly shift the output for better results.
 
 <img src="imgs/training_cycles.png" alt="Training cycles" style="width:500px;">
 
