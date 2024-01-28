@@ -116,7 +116,7 @@ Next we create a forward function to arrange the nodes in the network and forwar
 
 Notice how each gate component is assigned a layer in the architecture. The data will flow first through the first layer comprised of both OR and NAND gates, then through the second layer AND gate respectively. All output values are bound to 0 and 1 with the sigmoid function.
 
-# Training
+# Training XOR
 
 Next we define our XOR training data
 
