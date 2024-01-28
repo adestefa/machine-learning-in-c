@@ -77,7 +77,7 @@ This yields good results with one million training cycles:
 
 
 
-<img src="imgs/img.png" alt="Training Result" style="width:600px;">
+<img src="imgs/img.png" alt="Training Result" style="width:700px;">
 
 
 
