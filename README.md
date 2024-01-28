@@ -46,7 +46,7 @@ Using this approach, and with random inputs values, we can begin iterating over 
 
 <img src="imgs/double_outcome.png" alt="training output" style="width:400px;">
 
-But a single input can only do so much work, let's add another input and increase our power!
+But a single input can only do so much work, let's add another input to our neuron and increase our power!
 
 <img src="imgs/two_inputs.png" alt="Nueron with two inputs" style="width:400px;">
 
