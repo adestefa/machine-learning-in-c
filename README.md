@@ -183,7 +183,7 @@ Next we need to subtract B from A to move the model in the direction of the answ
 <img src="imgs/learning_rate.png" width="400px">
 
 
-Running these changes we can see the original output value decreases when we pass it through the learn function
+Running these changes we can see the original random weights decrease toward zero every time we subtract the values.
 
 
 <img src="imgs/learn_output.png" width="400px">
