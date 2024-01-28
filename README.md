@@ -150,7 +150,14 @@ Not great, but not bad. Let's see how we can improve and get closer to zero. Now
 
 <img src="imgs/xor_finite_diff2.png" width="600px">
 
+Now update main to add the wiggle
+
+<img src="mgs/xor_main.png" width="400px">
+
+
 Running we get the A set of original random values, then we run them through the finite difference function to wiggle the values giving us the B set of values.   
+
+
 
 <img src="imgs/xor_wiggle.png" width="400px">
 

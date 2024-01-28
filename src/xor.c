@@ -270,21 +270,17 @@ Xor finite_diff(Xor m, float eps)
 int main(void) 
 {
     float eps = 1e-1;
-
     
     // randomize an Xor data structure
     Xor m = rand_xor();
     
+    // print report
     printf("\n\n-----[A - Original]-------------\n\n");
-    
-    // print the values
     print_xor(m);
 
+    // now wiggle the values and print again
     printf("\n-----[B - Wiggled]-------------\n");
-    
-    // now wiggle the values
     print_xor(finite_diff(m, eps));
-
 
 
     return 0;
