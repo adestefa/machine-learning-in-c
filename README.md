@@ -132,6 +132,12 @@ Running what we have so far gives us some values to start with
 <img src="imgs/xor_values.png" width="300">
 
 
+Now that we have all the key elements in place the moment of truth, we can now run our model and see the results...
+
+<img src="imgs/xor_run1.png" width="300">
+
+
+
 
 
 

@@ -116,7 +116,7 @@ float forward(Xor m, float x, float y)
 // the neural node architecture, and 
 // it doesn't know the concept of neuron
 // instead you just feed it two inputs
-float cost(Xor m, float x1, float x2) 
+float cost(Xor m) 
 {
     float result = 0.0f;
     for (size_t i = 0; i < train_count; ++i) {
@@ -190,7 +190,10 @@ int main(void)
 {
   
     Xor m = rand_xor();
+    
     print_xor(m);
+
+    printf("cost = %f\n", cost(m));
 
     return 0;
 }
