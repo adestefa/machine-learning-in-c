@@ -166,7 +166,7 @@ Now that we have nine parameters, it is harder to wiggle them all like with did 
 
 <img src="imgs/xor_finite_diff2.png" width="700px">
 
-Now update main to add the wiggle
+Now we update main to add the wiggle
 
 
 <img src="imgs/xor_main.png" width="500px">
