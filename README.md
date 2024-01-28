@@ -12,7 +12,7 @@
  
 
 
-
+# Start Small
 
 ![Image](imgs/artifical_neuron.png)
 
