@@ -95,7 +95,49 @@ float forward(Xor m, float x, float y)
 
 }
 
+// Define our training data
+ float trainXOR[][3] = {
+    {0, 0, 0},
+    {1, 0, 1},
+    {0, 1, 1},
+    {1, 1, 0},
+ }; 
 
+
+// cost function does not know about 
+// the neural node architecture, and 
+// it doesn't know the concept of neuron
+// instead you just feed it two inputs
+float cost(Xor m, float x1, float x2) 
+{
+    float result = 0.0f;
+    for (size_t i = 0; i < train_count; ++i) {
+        
+        // train using two inputs
+        float x1 = train[i][0];
+        float x2 = train[i][1];
+        
+        // feed data into the model
+        float y = forward(m, x1, x2) 
+        
+        // find the distance between input and outcome
+        float d = y - train[i][2];
+
+        // amplify small errors
+        result += d*d;
+        
+        // if the value is big it is very bad
+        // if it is zero it fits the data perfectly
+        result /= train_count;
+
+        // is y equal to what we expect?  (print the training goal data)
+        //printf("actual: %f, expected: %f, AvgSq: %f\n", y, train[i][1], result);
+
+    }
+    return result;
+}
+
+// Xor can be calculated with (x|y) & -(x&y)
 int main(void) 
 {
     printf("XOR");

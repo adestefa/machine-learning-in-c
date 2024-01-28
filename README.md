@@ -92,18 +92,24 @@ To deal with nine parameters we will create a new structure, which will account 
 <img src="imgs/structxor.png" width="200">
 
 <br />
-Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. 
+Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. <br />
 
 <img src="imgs/forward.png" width="600">
 
 
-Notice how each gate component is assigned a layer in the architecture and marked as such. The data will flow first through the OR and NAND gates, then through the final AND gate respectively.
+Notice how each gate component is assigned a layer in the architecture. The data will flow first through the first layer comprised of both OR and NAND gates, then through the second layer AND gate respectively. All output values are bound to 0 and 1 with the sigmoid function.
 
 
+Next we define our XOR training data
 
 
+<img src="imgs/xor_data.png" width="200">
 
 
+Now that we have the data, we need to update the cost function, this time we will pass in the whole model (Xor) and use the forward function.
+
+
+<img src="imgs/xor_cost_func.png" width="500">
 
 
 
