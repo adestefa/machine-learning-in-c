@@ -3,7 +3,7 @@
 
 
 
- <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, exploring ML concepts using C over a number of live streams. This is not something you would use in production. This is meant to be a personal learning exercise to understand key ML concepts from a different perspective without any tools. I want to give a huge thanks to [Alexey Kutepov](https://github.com/rexim) (Tsoding) who is a demigod of the Lord's language. He is very generous with his time and wit, carefully explaining complex concepts so a caveman brain like mine can understand. I highly recommend supporting him, subscribing to his content and visiting his github.  
+ <i>Note: The following is inspired by a series of long <a href="https://www.youtube.com/watch?v=PGSba51aRYU" target="_blank">Tsoding Sessions</a>, exploring ML concepts using C over a number of live streams. This is not something you would use in production. This is meant to be a personal learning exercise to understand key ML concepts from a different perspective without any tools. I want to give a huge thanks to [Alexey Kutepov](https://github.com/rexim) (Tsoding) who is a demigod of the Lord's language. He is very generous with his time and wit, carefully explaining complex concepts so a caveman brain like mine can understand. I highly recommend supporting him, subscribing to his content and visiting his github.</i>  
  
  <br />
  
