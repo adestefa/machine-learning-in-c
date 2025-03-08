@@ -21,7 +21,7 @@ Our first job is to start by building a single artificial neuron with a single i
 
 ![Image](imgs/single_input.png)
 
-If this seems too abstract, instead think of the circle as a car, and 'x' input is the driver, while 'w' weight input is a backseat driver nudging the car to the destination 'y'. (The First Neural Networks: https://www.youtube.com/watch?v=e5dVSygXbAE)
+If this seems too abstract, instead think of the circle as a car, and 'x' input is the driver, while 'w' weight input is a backseat driver nudging the car to the destination 'y'. 
 
 
 In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it a unique new input, and the trained weight values drive the path of output to the correct answer. 
@@ -161,7 +161,7 @@ Running these changes we can see every time we wiggle the values, subtracting th
 
 # Resources for those that want to continue learning: 
 
-https://www.youtube.com/watch?v=e5dVSygXbAE
+The First Neural Networks: https://www.youtube.com/watch?v=e5dVSygXbAE
 
 https://www.geeksforgeeks.org/machine-learning/
 
