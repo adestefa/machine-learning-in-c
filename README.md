@@ -159,8 +159,13 @@ Running these changes we can see every time we wiggle the values, subtracting th
 
 ...
 
+# Resources for those that want to continue learning: 
 
-<br />
+https://www.geeksforgeeks.org/machine-learning/
 
-<img src="https://avatars.githubusercontent.com/u/18597647?v=4" width="80px">
+https://www.geeksforgeeks.org/python-for-machine-learning/?ref=lbp
+
+https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-explained
+
+
 
