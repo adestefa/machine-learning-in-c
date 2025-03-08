@@ -8,7 +8,6 @@
  <br />
  -->
 
-
 # Where to Start?
 
 ![Image](imgs/artifical_neuron.png)
@@ -27,20 +26,18 @@ If this seems too abstract, instead think of the circle as a car, and 'x' input 
 
 In order to use this artificial neuron to 'learn' we must give it structured input data patterns in values that we can repeat over training cycles, until we 'train' the neuron to predict the right answer. That means once trained, we can give it a unique new input, and the trained weight values drive the path of output to the correct answer. 
 
-What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with. How do we do that exactly you may ask? We guess until we find the right weight value that works, and automate this by having the computer guess and then check it's own answer over and over again. This is called training.
+What we are training is actually finding the right weights and bias that consistently provides correct answers even with new input values it was never trained with. How do we do that exactly you may ask? We guess until we find the right weight value that works, and automate this by having the computer guess and then check its own answer over and over again. This is called training.
 
  
 # Training
 
 To begin we start with very simple training data that doubles the input. With enough guessing (training), we can find the right model weights that should be able to predict the double of any input value we give the neuron without knowing the math directly. 
 
-
 <img src="imgs/double.png" alt="training data" style="width:300px;">
 
-Now we have the data, we build a a simple <i>cost function</i> to calculate how far the guess is from the target 'y' value we want. A cost function is a mathematical concept that measures the performance of a machine learning model for a data set. It quantifies the error between predicted and expected values and presents that error in the form of a single real number.
+Now we have the data, we build a simple <i>cost function</i> to calculate how far the guess is from the target 'y' value we want. A cost function is a mathematical concept that measures the performance of a machine learning model for a data set. It quantifies the error between predicted and expected values and presents that error in the form of a single real number.
 
-
- In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
+In this way we can feed the neuron random inputs and have it return a guess answer. The closer the cost gets to zero, the closer we are to the target answer value. We do the heavy lifting of finding the distance between guess and correct answer using an average square function, and include a bias to drive the model toward accuracy independent of input values.
 
 <img src="imgs/cost_function.png" alt="Cost function" style="width:600px;">
 
@@ -71,7 +68,6 @@ What we need now is a training function that can cycle over the cost and help dr
 
 Now we have a single artificial neuron with two inputs, two weights, which uses sigmoid as an activity function to limit unbound values, and a bias to shift the outcome as needed.
 
-
 # Use Case: Logic Gates
 
  We can now begin training on new data to do real work. Let's start with truth tables to model logic gates. This data allows us to train AND, OR and NAND gate models. 
@@ -82,15 +78,9 @@ Now we have a single artificial neuron with two inputs, two weights, which uses 
 
 This yields good results with one million training cycles:
 
-
-
 <img src="imgs/img.png" alt="Training Result" style="width:700px;">
 
-
-
 Although we are not exactly at 1, we are very close and can use above and below .5 to calculate the answer from the model output.
-
-
 
 # A Neural Network
 
@@ -106,13 +96,9 @@ To deal with nine parameters we will create a new structure, which will account 
 
 <img src="imgs/structxor.png" width="250px;">
 
-
 Next we create a forward function to arrange the nodes in the network and forward the input data through the layers in the architecture. 
 
-
-
 <img src="imgs/forward.png" width="600px;">
-
 
 Notice how each gate component is assigned a layer in the architecture. The data will flow first through the first layer comprised of both OR and NAND gates, then through the second layer AND gate respectively. All output values are bound to 0 and 1 with the sigmoid function.
 
@@ -151,57 +137,30 @@ Put it all together
 
 Now that we have all the key elements in place the moment of truth, we can now run our model and see the results...
 
-
-
-
 <img src="imgs/xor_run1.png" width="400px;">
 
-
 Not great, but not bad. Let's see how we can improve and get closer to zero. 
-
 
 # Finite Difference
 
 Now that we have nine parameters, it is harder to wiggle them all like with did with the double and logic gates models. We have to do more work to get the job done in a new finite difference function.
 
 <img src="imgs/xor_finite_diff2.png" width="700px">
-
 Now we update main to add the wiggle
-
-
 <img src="imgs/xor_main.png" width="500px">
-
 
 Running we get a set of original random values (A), then we run them through the finite difference function to wiggle the values giving us a new set of values (B).   
 
-
-
 <img src="imgs/xor_wiggle.png" width="300px">
-
 Next we need to subtract B from A to move the model in the direction of the answer. We create a new learn function for that.
-
 <img src="imgs/learning_rate.png" width="400px">
-
-
 Running these changes we can see every time we wiggle the values, subtracting them from the original values, will drive the cost towards zero and improved performance of the model.
-
-
 <img src="imgs/learn_output.png" width="400px">
-
-
-
-
-
-
-
 
 ...
 
 
 <br />
 
-"Hey.. Where's the rest??!"<br />
-
 <img src="https://avatars.githubusercontent.com/u/18597647?v=4" width="80px">
 
-Stay tuned! More to come...
